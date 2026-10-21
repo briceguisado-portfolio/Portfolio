@@ -472,17 +472,16 @@ body::before {
 #about {
   background: var(--hero-bg);
   color: var(--hero-fg);
-  padding-left: max(24px, env(safe-area-inset-left, 0px));
-  padding-right: max(24px, env(safe-area-inset-right, 0px));
-  padding-block: 100px;
 }
 .about-inner {
-  max-width: 1200px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 0;
   align-items: center;
+  min-height: 600px;
+}
+.about-copy-col {
+  padding: 100px max(40px, calc((100vw - 1200px) / 2 + 40px)) 100px 80px;
 }
 .about-photo-placeholder {
   width: 100%;
@@ -672,6 +671,7 @@ footer {
   .cs-number { font-size: 2.5rem; }
   .annexes-grid { grid-template-columns: 1fr 1fr; }
   .about-inner { grid-template-columns: 1fr; }
+  .about-copy-col { padding: 60px 24px; }
   .about-photo-placeholder { display: none; }
 }
 @media (max-width: 600px) {
@@ -1107,7 +1107,7 @@ footer {
         <span id="about-dot-4" style="width:6px;height:6px;border-radius:50%;background:white;opacity:0.4;display:inline-block;transition:opacity 0.3s;"></span>
       </div>
     </div>
-    <div class="about-copy">
+    <div class="about-copy-col"><div class="about-copy">
       <p class="about-eyebrow">À propos</p>
       <h2 class="about-title">Ce qui fait la différence, c'est la façon dont on décide de raconter.</h2>
       <p class="about-text">Depuis 5 ans, je travaille à rendre accessibles des sujets que beaucoup pensaient réservés aux initiés. Sciences, recherche, culture. J'ai coordonné des créateurs de contenu parmi les plus suivis de France, conçu des formats live récompensés, co-crée une structure de production en intrapreneuriat. Aujourd'hui je cherche à mettre ces compétences au service d'un projet qui a quelque chose à dire.</p>
@@ -1135,7 +1135,7 @@ footer {
           <strong>TOEIC 940 · Anglais C1</strong>
           <span></div>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
