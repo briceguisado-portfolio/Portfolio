@@ -675,10 +675,12 @@ footer {
   .annexes-grid { grid-template-columns: 1fr 1fr; }
   .about-inner { grid-template-columns: 1fr; }
   .about-photo-placeholder { display: none; }
-  #hero { padding-left: 20px; padding-right: 20px; }
-  .hero-inner h1 { font-size: clamp(2.2rem, 8vw, 4rem); }
-  .hero-actions { flex-wrap: wrap; }
-  .hero-actions a { flex: 1 1 auto; text-align: center; }
+  #hero { padding-left: 20px; padding-right: 20px; width: 100%; box-sizing: border-box; overflow-x: hidden; }
+  .hero-inner { width: 100%; max-width: 100%; }
+  .hero-inner h1 { font-size: clamp(1.8rem, 7vw, 3rem); word-break: break-word; overflow-wrap: break-word; }
+  .hero-actions { flex-wrap: wrap; gap: 12px; }
+  .hero-actions a { flex: 1 1 calc(50% - 6px); min-width: 120px; text-align: center; box-sizing: border-box; }
+  .hero-actions a:first-child { flex: 1 1 100%; }
 }
 @media (max-width: 600px) {
   .nav-links { display: none; }
