@@ -676,12 +676,14 @@ footer {
   .annexes-grid { grid-template-columns: 1fr 1fr; }
   .about-inner { grid-template-columns: 1fr; }
   .about-photo-placeholder { display: none; }
-  #hero { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); width: 100%; box-sizing: border-box; overflow-x: hidden; }
-  .hero-inner { width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden; }
-  .hero-title { font-size: clamp(1.8rem, 7vw, 3rem); word-break: break-word; overflow-wrap: break-word; }
-  .hero-subtitle { max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
-  .hero-actions { flex-wrap: wrap; gap: 12px; width: 100%; box-sizing: border-box; }
-  .hero-actions a { flex: 1 1 100%; width: 100%; text-align: center; box-sizing: border-box; min-width: 0; }
+  #hero { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); width: 100%; box-sizing: border-box; }
+  .hero-inner { width: 100%; max-width: 100%; }
+  .hero-title { font-size: clamp(1.6rem, 8vw, 2.8rem); }
+  .hero-subtitle { font-size: 0.95rem; max-width: 100%; }
+  .hero-stats { gap: 20px; }
+  .stat-num { font-size: 1.5rem; }
+  .hero-actions { gap: 10px; }
+  .btn-primary, .btn-secondary { font-size: 0.75rem; padding: 12px 20px; }
 }
 @media (max-width: 600px) {
   .nav-links { display: none; }
