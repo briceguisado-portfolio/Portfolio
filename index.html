@@ -106,6 +106,7 @@ body::before {
   color: var(--fg);
   text-decoration: none;
   letter-spacing: -0.01em;
+  flex-shrink: 0;
 }
 .nav-links {
   display: flex;
@@ -689,6 +690,13 @@ footer {
   .hero-stats { gap: 24px; }
   .annexes-grid { grid-template-columns: 1fr; }
   .cs-results { flex-direction: column; }
+  /* Nav controls compacts sur mobile */
+  nav { padding: 0 max(16px, env(safe-area-inset-left, 0px)); }
+  .nav-inner { gap: 8px; }
+  #lang-toggle { padding: 5px 8px; font-size: 0.7rem; }
+  #theme-toggle { padding: 5px 8px; }
+  #theme-toggle svg { display: none !important; }
+  .nav-cv { padding: 5px 10px; font-size: 0.72rem; }
 }
 
 /* === THEME TOGGLE HOVER === */
@@ -711,7 +719,7 @@ footer {
       <li><a href="#about" data-fr="À propos" data-en="About">À propos</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div style="display:flex;align-items:center;gap:12px">
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
       <button id="lang-toggle" onclick="toggleLang()" aria-label="Switch language" style="background:none;border:1px solid var(--border);border-radius:2px;padding:6px 10px;cursor:pointer;color:var(--fg-muted);font-family:var(--font-body);font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;white-space:nowrap"><span class="lang-fr">FR</span><span style="opacity:.3"> / </span><span class="lang-en">EN</span></button>
       <button id="theme-toggle" aria-label="Changer de thème" onclick="toggleTheme()" style="background:none;border:1px solid var(--border);border-radius:2px;padding:6px 10px;cursor:pointer;display:flex;align-items:center;gap:6px;color:var(--fg-muted);font-family:var(--font-body);font-size:0.75rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s">
         <svg id="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
