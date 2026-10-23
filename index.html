@@ -706,12 +706,13 @@ footer {
   <div class="nav-inner">
     <a class="nav-logo" href="#hero">Brice Guisado</a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#annexes">Projets annexes</a></li>
-      <li><a href="#about">À propos</a></li>
+      <li><a href="#projets" data-fr="Projets" data-en="Projects">Projets</a></li>
+      <li><a href="#annexes" data-fr="Projets annexes" data-en="Side projects">Projets annexes</a></li>
+      <li><a href="#about" data-fr="À propos" data-en="About">À propos</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:12px">
+      <button id="lang-toggle" onclick="toggleLang()" aria-label="Switch language" style="background:none;border:1px solid var(--border);border-radius:2px;padding:6px 10px;cursor:pointer;color:var(--fg-muted);font-family:var(--font-body);font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;white-space:nowrap"><span class="lang-fr">FR</span><span style="opacity:.3"> / </span><span class="lang-en">EN</span></button>
       <button id="theme-toggle" aria-label="Changer de thème" onclick="toggleTheme()" style="background:none;border:1px solid var(--border);border-radius:2px;padding:6px 10px;cursor:pointer;display:flex;align-items:center;gap:6px;color:var(--fg-muted);font-family:var(--font-body);font-size:0.75rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s">
         <svg id="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         <svg id="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -728,30 +729,30 @@ footer {
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <p class="hero-eyebrow">Chef de projet créatif · Disponible</p>
-      <h1 class="hero-title">Je transforme des sujets complexes en contenus qui touchent du monde.</h1>
-      <p class="hero-subtitle">Cinq ans à produire, structurer et raconter. Entre festivals, chaînes YouTube, lives Twitch et création d'entreprise.</p>
+      <p class="hero-eyebrow" data-fr="Chef de projet créatif · Disponible" data-en="Creative Project Manager · Available">Chef de projet créatif · Disponible</p>
+      <h1 class="hero-title" data-fr="Je transforme des sujets complexes en contenus qui touchent du monde." data-en="I turn complex subjects into content that reaches people.">Je transforme des sujets complexes en contenus qui touchent du monde.</h1>
+      <p class="hero-subtitle" data-fr="Cinq ans à produire, structurer et raconter. Entre festivals, chaînes YouTube, lives Twitch et création d'entreprise." data-en="Five years producing, structuring, and storytelling. Across festivals, YouTube channels, Twitch live shows, and venture creation.">Cinq ans à produire, structurer et raconter. Entre festivals, chaînes YouTube, lives Twitch et création d'entreprise.</p>
       <div class="hero-stats">
         <div class="stat-item">
           <span class="stat-num">9M+</span>
-          <span class="stat-label">vues générées</span>
+          <span class="stat-label" data-fr="vues générées" data-en="views generated">vues générées</span>
         </div>
         <div class="stat-item">
           <span class="stat-num">100+</span>
-          <span class="stat-label">vidéos produites</span>
+          <span class="stat-label" data-fr="vidéos produites" data-en="videos produced">vidéos produites</span>
         </div>
         <div class="stat-item">
           <span class="stat-num">3</span>
-          <span class="stat-label">concours remportés</span>
+          <span class="stat-label" data-fr="concours remportés" data-en="competitions won">concours remportés</span>
         </div>
         <div class="stat-item">
-          <span class="stat-num">6 ans</span>
-          <span class="stat-label">d'expérience</span>
+          <span class="stat-num"><span data-fr="6 ans" data-en="6 yrs">6 ans</span></span>
+          <span class="stat-label" data-fr="d'expérience" data-en="of experience">d'expérience</span>
         </div>
       </div>
       <div class="hero-actions">
-        <a class="btn-primary" href="#projets">Voir mes projets</a>
-        <a class="btn-secondary" href="#contact">Me contacter</a>
+        <a class="btn-primary" href="#projets" data-fr="Voir mes projets" data-en="See my work">Voir mes projets</a>
+        <a class="btn-secondary" href="#contact" data-fr="Me contacter" data-en="Get in touch">Me contacter</a>
       </div>
     </div>
     <div class="hero-photo-area" style="position:relative;display:flex;align-items:center;justify-content:center;">
@@ -768,8 +769,8 @@ footer {
   <div class="section-outer">
     <div class="section-inner">
       <div class="section-head">
-        <p class="eyebrow">Études de cas</p>
-        <h2>Plus que des missions : des projets.</h2>
+        <p class="eyebrow" data-fr="Études de cas" data-en="Case studies">Études de cas</p>
+        <h2 data-fr="Plus que des missions : des projets." data-en="More than assignments: projects.">Plus que des missions : des projets.</h2>
       </div>
 
       <!-- CS 1 : Echoscientifiques -->
@@ -1046,8 +1047,8 @@ footer {
   <div class="section-outer">
     <div class="section-inner">
       <div class="section-head">
-        <p class="eyebrow">En parallèle</p>
-        <h2>Projets annexes</h2>
+        <p class="eyebrow" data-fr="En parallèle" data-en="On the side">En parallèle</p>
+        <h2 data-fr="Projets annexes" data-en="Side projects">Projets annexes</h2>
       </div>
       <div class="annexes-grid">
         <div class="annexe-card">
@@ -1125,9 +1126,9 @@ footer {
       </div>
     </div>
     <div class="about-copy">
-      <p class="about-eyebrow">À propos</p>
-      <h2 class="about-title">Ce qui fait la différence, c'est la façon dont on décide de raconter.</h2>
-      <p class="about-text">Depuis 5 ans, je travaille à rendre accessibles des sujets que beaucoup pensaient réservés aux initiés. Sciences, recherche, culture. J'ai coordonné des créateurs de contenu parmi les plus suivis de France, conçu des formats live récompensés, co-crée une structure de production en intrapreneuriat. Aujourd'hui je cherche à mettre ces compétences au service d'un projet qui a quelque chose à dire.</p>
+      <p class="about-eyebrow" data-fr="À propos" data-en="About">À propos</p>
+      <h2 class="about-title" data-fr="Ce qui fait la différence, c'est la façon dont on décide de raconter." data-en="What makes the difference is how you choose to tell the story.">Ce qui fait la différence, c'est la façon dont on décide de raconter.</h2>
+      <p class="about-text" data-fr="Depuis 5 ans, je travaille à rendre accessibles des sujets que beaucoup pensaient réservés aux initiés. Sciences, recherche, culture. J'ai coordonné des créateurs de contenu parmi les plus suivis de France, conçu des formats live récompensés, co-crée une structure de production en intrapreneuriat. Aujourd'hui je cherche à mettre ces compétences au service d'un projet qui a quelque chose à dire." data-en="For 5 years, I've been making accessible the subjects many thought were reserved for specialists. Science, research, culture. I've coordinated some of France's most-followed content creators, designed award-winning live formats, and co-founded a production structure through intrapreneurship. Today I'm looking to bring these skills to a project that has something to say.">Depuis 5 ans, je travaille à rendre accessibles des sujets que beaucoup pensaient réservés aux initiés. Sciences, recherche, culture. J'ai coordonné des créateurs de contenu parmi les plus suivis de France, conçu des formats live récompensés, co-crée une structure de production en intrapreneuriat. Aujourd'hui je cherche à mettre ces compétences au service d'un projet qui a quelque chose à dire.</p>
       <div class="about-skills">
         <span class="skill-chip">Gestion de projet</span>
         <span class="skill-chip">Stratégie éditoriale</span>
@@ -1160,13 +1161,13 @@ footer {
 <section id="contact">
   <div class="contact-inner">
     <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent)">Contact</p>
-    <h2 class="contact-title">Un projet à produire ?<br>Une mission à proposer ?</h2>
-    <p class="contact-sub">Disponible immédiatement. Basé à Antibes, mobile sur toute la région et au-delà.</p>
+    <h2 class="contact-title" data-fr="Un projet à produire ?&lt;br&gt;Une mission à proposer ?" data-en="A project to produce?&lt;br&gt;An opportunity to share?">Un projet à produire ?<br>Une mission à proposer ?</h2>
+    <p class="contact-sub" data-fr="Disponible immédiatement. Basé à Antibes, mobile sur toute la région et au-delà." data-en="Available immediately. Based in Antibes, mobile across the region and beyond.">Disponible immédiatement. Basé à Antibes, mobile sur toute la région et au-delà.</p>
     <p class="contact-email-text">briceguisado@gmail.com</p>
     <div class="contact-links">
       <a class="copy-btn" href="mailto:briceguisado@gmail.com" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Envoyer un email
+        <span data-fr="Envoyer un email" data-en="Send an email">Envoyer un email</span>
       </a>
       <a class="contact-link" href="https://www.linkedin.com/in/brice-guisado-700b44183/" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1177,8 +1178,8 @@ footer {
 </section>
 
 <footer>
-  <span>Brice Guisado · Chef de projet créatif</span>
-  <span>Antibes · Disponible immédiatement</span>
+  <span data-fr="Brice Guisado · Chef de projet créatif" data-en="Brice Guisado · Creative Project Manager">Brice Guisado · Chef de projet créatif</span>
+  <span data-fr="Antibes · Disponible immédiatement" data-en="Antibes · Available immediately">Antibes · Disponible immédiatement</span>
 </footer>
 
 <script>
@@ -1217,5 +1218,32 @@ footer {
   window.aboutPrev=function(){go(idx-1);};
   window.aboutNext=function(){go(idx+1);};
   setInterval(function(){go(idx+1);},5000);
+})();
+</script>
+<style>
+/* Lang toggle active state */
+html[lang="fr"] #lang-toggle .lang-fr { opacity: 1; }
+html[lang="en"] #lang-toggle .lang-en { opacity: 1; }
+#lang-toggle .lang-fr, #lang-toggle .lang-en { opacity: 0.4; transition: opacity 0.2s; }
+#lang-toggle:hover { color: var(--accent); border-color: var(--accent); }
+</style>
+<script>
+/* === LANGUAGE SWITCH === */
+(function() {
+  var lang = 'fr';
+  try { var s = localStorage.getItem('lang'); if (s === 'en') lang = 'en'; } catch(e) {}
+  function applyLang(l) {
+    lang = l;
+    document.documentElement.lang = l;
+    try { localStorage.setItem('lang', l); } catch(e) {}
+    document.querySelectorAll('[data-fr],[data-en]').forEach(function(el) {
+      var text = el.getAttribute('data-' + l);
+      if (text === null) return;
+      if (text.indexOf('<') !== -1) { el.innerHTML = text; }
+      else { el.textContent = text; }
+    });
+  }
+  window.toggleLang = function() { applyLang(lang === 'fr' ? 'en' : 'fr'); };
+  applyLang(lang);
 })();
 </script>
