@@ -736,6 +736,185 @@ footer {
   * { transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ════════════════════════════════════════════
+   PARCOURS — Timeline section
+   ════════════════════════════════════════════ */
+#parcours {
+  background: var(--bg-alt);
+}
+
+/* Custom tokens for the two timeline tracks */
+:root {
+  --tl-edu: #4a7fa5;
+  --tl-job: #e05a2b;
+  --tl-axis: #c0c0c8;
+  --tl-node-bg: var(--bg);
+  --tl-node-border: var(--fg-muted);
+  --tl-ax: 42%;
+  --tl-seg: 90px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --tl-axis: #4a4a52;
+    --tl-node-border: #6b6b72;
+  }
+}
+:root[data-theme="dark"] {
+  --tl-axis: #4a4a52;
+  --tl-node-border: #6b6b72;
+}
+
+/* Intro text */
+.parcours-intro {
+  max-width: 560px;
+  margin-bottom: 52px;
+}
+.parcours-eyebrow {
+  font-size: .62rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--tl-job);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.parcours-eyebrow::before {
+  content: ''; width: 20px; height: 1.5px;
+  background: var(--tl-job); flex-shrink: 0;
+}
+.parcours-heading {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 400; line-height: 1.2; margin-bottom: 10px;
+}
+.parcours-text {
+  font-size: .92rem; font-weight: 300; line-height: 1.8;
+  color: var(--fg-muted);
+}
+
+/* Timeline container */
+.tl {
+  position: relative;
+  width: 100%;
+  height: calc(6 * var(--tl-seg) + 60px);
+}
+
+/* Axis */
+.tl-ax {
+  position: absolute;
+  left: var(--tl-ax); transform: translateX(-50%);
+  width: 2px; top: 0; bottom: 50px;
+  background: var(--tl-axis);
+  z-index: 1;
+}
+.tl-ax-dash {
+  position: absolute;
+  left: var(--tl-ax); transform: translateX(-50%);
+  width: 2px; top: 0; height: 40px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--tl-axis) 0, var(--tl-axis) 5px,
+    transparent 5px, transparent 11px
+  );
+  z-index: 2;
+}
+.tl-ax-arr {
+  position: absolute;
+  left: var(--tl-ax); transform: translateX(-50%);
+  bottom: 42px;
+  width: 0; height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 9px solid var(--tl-axis);
+  z-index: 2;
+}
+
+/* Year nodes */
+.tl-nd {
+  position: absolute;
+  left: var(--tl-ax);
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  width: 64px; height: 32px;
+  border: 2px solid var(--tl-node-border); border-radius: 9px;
+  background: var(--tl-node-bg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .73rem; font-weight: 700; color: var(--fg); letter-spacing: .02em;
+}
+
+/* Bars */
+.tl-bar-l {
+  position: absolute;
+  left: calc(var(--tl-ax) - 38px);
+  width: 3px; border-radius: 2px;
+  background: var(--tl-edu);
+  z-index: 3;
+}
+.tl-bar-r {
+  position: absolute;
+  left: calc(var(--tl-ax) + 38px);
+  width: 3px; border-radius: 2px;
+  background: var(--tl-job);
+  z-index: 3;
+}
+
+/* Text blocks */
+.tl-txt-l {
+  position: absolute;
+  right: calc(100% - var(--tl-ax) + 54px);
+  text-align: right;
+  transform: translateY(-50%);
+}
+.tl-txt-r {
+  position: absolute;
+  left: calc(var(--tl-ax) + 54px);
+  transform: translateY(-50%);
+}
+.tl-cat {
+  font-size: .58rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; margin-bottom: 4px;
+}
+.tl-cat.edu { color: var(--tl-edu); }
+.tl-cat.job { color: var(--tl-job); }
+.tl-ttl {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 400; line-height: 1.25;
+  color: var(--fg); margin-bottom: 3px;
+}
+.tl-org {
+  font-size: .7rem; color: var(--fg-muted); margin-bottom: 7px; line-height: 1.4;
+}
+.tl-lnk {
+  display: inline-flex; align-items: center; gap: 2px;
+  font-size: .6rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--tl-job);
+  text-decoration: none; border-bottom: 1px solid var(--tl-job);
+  padding-bottom: 1px; transition: opacity .2s;
+}
+.tl-lnk:hover { opacity: .65; }
+.tl-lnk::after { content: '92'; margin-left: 2px; }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 580px) {
+  :root {
+    --tl-ax: 38%;
+    --tl-seg: 70px;
+  }
+  .tl-nd {
+    width: 52px; height: 27px; font-size: .65rem;
+  }
+  .tl-bar-l { left: calc(var(--tl-ax) - 30px); }
+  .tl-bar-r { left: calc(var(--tl-ax) + 30px); }
+  .tl-txt-l {
+    right: calc(100% - var(--tl-ax) + 44px);
+    font-size: .85em;
+  }
+  .tl-txt-r {
+    left: calc(var(--tl-ax) + 44px);
+    font-size: .85em;
+  }
+  .tl-ttl { font-size: .88rem; }
+  .parcours-heading { font-size: 1.25rem; }
+  .tl {
+    height: calc(6 * var(--tl-seg) + 50px);
+  }
+}
 </style>
 
 <!-- NAV -->
@@ -743,6 +922,7 @@ footer {
   <div class="nav-inner">
     <a class="nav-logo" href="#hero">Brice Guisado</a>
     <ul class="nav-links" id="nav-links">
+      <li><a href="#parcours" data-fr="Parcours" data-en="Background">Parcours</a></li>
       <li><a href="#projets" data-fr="Projets" data-en="Projects">Projets</a></li>
       <li><a href="#annexes" data-fr="Projets annexes" data-en="Side projects">Projets annexes</a></li>
       <li><a href="#about" data-fr="À propos" data-en="About">À propos</a></li>
@@ -800,6 +980,96 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- PARCOURS -->
+<section id="parcours">
+  <div class="section-outer">
+    <div class="section-inner">
+
+      <div class="parcours-intro">
+        <div class="parcours-eyebrow" data-fr="A propos" data-en="About">A propos</div>
+        <p class="parcours-heading" data-fr="Hello, je m'appelle Brice Guisado." data-en="Hello, I'm Brice Guisado.">Hello, je m'appelle Brice Guisado.</p>
+        <p class="parcours-text"
+           data-fr="Passionne de sujets complexes en sciences comme en pop culture, j'ai fini par en faire mon metier sous plusieurs casquettes. Les voici :"
+           data-en="Passionate about complex topics in science and pop culture, I eventually turned them into a career - wearing several hats. Here they are:">Passionne de sujets complexes en sciences comme en pop culture, j'ai fini par en faire mon metier sous plusieurs casquettes. Les voici :</p>
+      </div>
+
+      <!--
+        Noeuds : top = n x --tl-seg  (n=0..6)
+        n=0  0      2020
+        n=1  1seg   2021
+        n=2  2seg   2022
+        n=3  3seg   2023
+        n=4  4seg   2024
+        n=5  5seg   2025
+        n=6  6seg   2026
+      -->
+      <div class="tl">
+
+        <div class="tl-ax"></div>
+        <div class="tl-ax-dash"></div>
+        <div class="tl-ax-arr"></div>
+
+        <!-- NOEUDS -->
+        <div class="tl-nd" style="top:0">2020</div>
+        <div class="tl-nd" style="top:calc(1 * var(--tl-seg))">2021</div>
+        <div class="tl-nd" style="top:calc(2 * var(--tl-seg))">2022</div>
+        <div class="tl-nd" style="top:calc(3 * var(--tl-seg))">2023</div>
+        <div class="tl-nd" style="top:calc(4 * var(--tl-seg))">2024</div>
+        <div class="tl-nd" style="top:calc(5 * var(--tl-seg))">2025</div>
+        <div class="tl-nd" style="top:calc(6 * var(--tl-seg))">2026</div>
+
+        <!-- FORMATION -->
+
+        <!-- Master 2020-2021 : milieu = 0.5seg -->
+        <div class="tl-bar-l" style="top:0;height:calc(1 * var(--tl-seg))"></div>
+        <div class="tl-txt-l" style="top:calc(0.5 * var(--tl-seg))">
+          <div class="tl-cat edu" data-fr="Formation" data-en="Education">Formation</div>
+          <div class="tl-ttl" data-fr="Master Strategie Digitale" data-en="Digital Strategy Master">Master Strategie Digitale</div>
+          <div class="tl-org">Universite Cote d'Azur</div>
+        </div>
+
+        <!-- Licence 2022-2023 : milieu = 2.5seg -->
+        <div class="tl-bar-l" style="top:calc(2 * var(--tl-seg));height:calc(1 * var(--tl-seg))"></div>
+        <div class="tl-txt-l" style="top:calc(2.5 * var(--tl-seg))">
+          <div class="tl-cat edu" data-fr="Formation" data-en="Education">Formation</div>
+          <div class="tl-ttl" data-fr="Licence Webdesign UX-UI" data-en="UX-UI Webdesign Degree">Licence Webdesign UX-UI</div>
+          <div class="tl-org">ITECOM Nice</div>
+          <a class="tl-lnk" href="#cs4" data-fr="Projet UX-UI" data-en="UX-UI Project">Projet UX-UI</a>
+        </div>
+
+        <!-- EMPLOI -->
+
+        <!-- Chef de projet Play Azur 2020-2023 : height=3seg - 8px, milieu ~= 1.5seg -->
+        <div class="tl-bar-r" style="top:0;height:calc(3 * var(--tl-seg) - 8px)"></div>
+        <div class="tl-txt-r" style="top:calc(1.5 * var(--tl-seg))">
+          <div class="tl-cat job" data-fr="Emploi" data-en="Job">Emploi</div>
+          <div class="tl-ttl" data-fr="Chef de projet video" data-en="Video Project Manager">Chef de projet video</div>
+          <div class="tl-org">Play Azur</div>
+          <a class="tl-lnk" href="#cs1" data-fr="Videos Echoscientifiques" data-en="Echoscientifiques Videos">Videos Echoscientifiques</a>
+        </div>
+
+        <!-- Ouverture Play Azur Prod 2023 : ancre sur noeud 2023 -->
+        <div class="tl-txt-r" style="top:calc(3 * var(--tl-seg)); transform:translateY(-50%)">
+          <div class="tl-ttl" data-fr="Ouverture de Play Azur Prod" data-en="Launch of Play Azur Prod">Ouverture de Play Azur Prod</div>
+          <a class="tl-lnk" href="#cs2" data-fr="Play Azur Prod" data-en="Play Azur Prod">Play Azur Prod</a>
+        </div>
+
+        <!-- Charge de projet editorial 2023-2026 : commence 8px apres 2023, milieu ~= 4.5seg -->
+        <div class="tl-bar-r" style="top:calc(3 * var(--tl-seg) + 8px);height:calc(3 * var(--tl-seg) - 8px)"></div>
+        <div class="tl-txt-r" style="top:calc(4.5 * var(--tl-seg))">
+          <div class="tl-cat job" data-fr="Emploi" data-en="Job">Emploi</div>
+          <div class="tl-ttl" data-fr="Charge de projet editorial" data-en="Editorial Project Lead">Charge de projet editorial</div>
+          <div class="tl-org">Play Azur Prod</div>
+          <a class="tl-lnk" href="#cs3" data-fr="Ma These en 180s" data-en="My Thesis in 180s">Ma These en 180s</a>
+        </div>
+
+      </div><!-- /.tl -->
+
+    </div><!-- /.section-inner -->
+  </div><!-- /.section-outer -->
+</section>
+
 
 <!-- CASE STUDIES -->
 <section id="projets">
